@@ -17,7 +17,5 @@ client.on('message', message => {
   	}
 });
 
-bot.user.setStatus('Doki Doki Literature Club')
-
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
