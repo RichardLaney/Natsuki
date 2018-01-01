@@ -7,7 +7,7 @@ client.on('ready', () => {
 
 	bot.user.setStatus('dnd')
 	
-	bot.user.setGame('Doki Doki Literature Club')
+	bot.user.setPresence({ game: { name: 'test', type: 0 } });
 	
 	});
 
