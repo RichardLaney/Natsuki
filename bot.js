@@ -1,25 +1,11 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const botSettings = require("./botsettings.json");
+const Discord = require("discord.js");
 
+const bot = new Discord.Client({disableEveryone: true});
 
-client.on('ready', () => {
-    console.log('I am ready!');
-
-	bot.user.setPresence({ game: { name: 'test', type: 0 } });
-	
-	});
-
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.channel.send('PONG!');
-  	}
+bot.on("ready", () =>{
+	console.log(`Bot is ready! ${bot.user.username}`);
+	bot.user.setStatus('dnd')
+	bot.user.setPresence({ game: { name: 'Doki Doki Literature Club', type: 0 } });
 });
-
-client.on('message', message => {
-    if (message.content === 'bing') {
-    	message.reply('BONG!');
-  	}
-});
-
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+bot.login(botSettings.token);
